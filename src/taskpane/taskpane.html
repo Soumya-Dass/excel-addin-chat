@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Excel Chatbot</title>
+
+    <!-- Office JavaScript API -->
+    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
+
+    <!-- Local files -->
+    <link rel="stylesheet" href="taskpane.css" />
+</head>
+
+<body>
+    <div class="ms-welcome">
+        <!-- Header -->
+        <header class="ms-welcome__header">
+            <img width="60" height="60" src="../../assets/logo-filled.png" alt="Excel Assistant" title="Excel Assistant" />
+            <h1 class="ms-font-su">Excel Assistant</h1>
+            <p class="ms-font-m">Intelligent data analysis</p>
+        </header>
+
+        <!-- Status Bar -->
+        <div id="status-bar" class="status-bar">
+            <span id="status-text">Ready to analyze your data</span>
+        </div>
+
+        <!-- Data Source Toggle -->
+        <div class="data-source-toggle">
+            <label class="checkbox-container">
+                <input type="checkbox" id="use-selection" checked>
+                <span class="checkmark"></span>
+                <span class="checkbox-text">Use selected range</span>
+            </label>
+        </div>
+
+        <!-- Chat Container -->
+        <div class="chat-container">
+            <!-- Chat Messages Area -->
+            <div id="chat-messages" class="chat-messages">
+                <!-- Welcome message will be added by JavaScript -->
+            </div>
+
+            <!-- Chat Input Area -->
+            <div class="chat-input-container">
+                <div class="input-group">
+                    <input 
+                        type="text" 
+                        id="user-input" 
+                        placeholder="Ask a question about your Excel data..." 
+                        autocomplete="off"
+                    />
+                    <button id="send-btn" class="send-button" title="Send message">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22,2 15,22 11,13 2,9"></polygon>
+                        </svg>
+                    </button>
+                </div>
+                <div class="input-hint">
+                    Press Enter to send or click the arrow button
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading Overlay -->
+        <div id="loading-overlay" class="loading-overlay" style="display: none;">
+            <div class="loading-spinner">
+                <div class="spinner"></div>
+                <p>Analyzing your data...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script type="text/javascript" src="taskpane.js"></script>
+</body>
+
+</html>
